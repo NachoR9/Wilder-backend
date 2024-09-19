@@ -1,13 +1,13 @@
-package dev.nacho.personal_project_backend;
+package dev.nacho.wilder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PersonalProjectBackendApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PersonalProjectBackendApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }

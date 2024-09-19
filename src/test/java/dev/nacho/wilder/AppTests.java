@@ -1,10 +1,10 @@
-package dev.nacho.personal_project_backend;
+package dev.nacho.wilder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PersonalProjectBackendApplicationTests {
+class AppTests {
 
 	@Test
 	void contextLoads() {

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.nacho</groupId>
-	<artifactId>personal_project-backend</artifactId>
+	<artifactId>wilder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>personal_project-backend</name>
+	<name>wilder</name>
 	<description>Personal project</description>
 	<url/>
 	<licenses>
