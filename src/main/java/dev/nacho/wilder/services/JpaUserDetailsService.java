@@ -11,7 +11,7 @@ import dev.nacho.wilder.repositories.UserRepository;
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
 
-    UserRepository repository;
+    private UserRepository repository;
 
     public JpaUserDetailsService(UserRepository repository) {
         this.repository = repository;
