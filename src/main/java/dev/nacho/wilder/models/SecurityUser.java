@@ -27,7 +27,36 @@ public class SecurityUser implements UserDetails {
 
      @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO: implement
-        return new ArrayList<GrantedAuthority>();
+        
+        Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+
+        for (Role role : user.getRoles()) {
+            System.out.println("User role : " + role.getName());
+            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.getName());
+            authorities.add(authority);
+        }
+
+        return authorities;
     }
-}
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    }
+
