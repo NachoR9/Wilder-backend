@@ -19,12 +19,16 @@ public class Videogame {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_videogame")
+    @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
     @ManyToMany
     private List<Genre> genre;
+    @Column(name = "release_date")
     private LocalDate releaseDate;
+    @Column(name = "company")
     private String company;
+    @Column(name = "platform")
     private String platform;
 }

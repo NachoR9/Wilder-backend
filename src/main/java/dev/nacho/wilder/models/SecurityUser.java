@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class SecurityUser implements UserDetails {
 
-    User user;
+    private User user;
 
     public SecurityUser(User user) {
         this.user = user;
