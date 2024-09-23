@@ -24,7 +24,7 @@ public class Videogame {
     @Column(name = "name")
     private String name;
     @ManyToMany
-    private List<Genre> genre;
+    private List<Genre> genres;
     @Column(name = "release_date")
     private LocalDate releaseDate;
     @Column(name = "company")

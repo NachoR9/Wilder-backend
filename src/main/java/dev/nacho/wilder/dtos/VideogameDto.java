@@ -9,7 +9,7 @@ import lombok.Data;
 public class VideogameDto {
     private Long id;
     private String name;
-    private List<String> genre;
+    private List<String> genres;
     private LocalDate releaseDate;
     private String company;
     private String platform;
