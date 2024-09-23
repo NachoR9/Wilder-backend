@@ -12,12 +12,12 @@ INSERT INTO videogames (id, name, release_date, company, platform) VALUES (defau
 INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'Dragon ball Sparking Zero','2024-10-11','Bandai Namco Entertainment','PC, PS5');
 INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'New World Aeternum','2024-07-25','Amazon Game Studios','PS5');
 
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (1, 5);
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (1, 1);
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (2, 5);
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (2, 1);
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (3, 2);
-INSERT INTO videogames_genre (videogame_id, genre_id) VALUES (4, 5);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (1, 5);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (1, 1);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (2, 5);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (2, 1);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (3, 2);
+INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (4, 5);
 
 /* Roles */
 INSERT INTO roles (id, name) VALUES (default, 'ROLE_USER'); -- id = 1

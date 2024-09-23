@@ -50,6 +50,7 @@ public class SecurityConfig {
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                                 .requestMatchers(HttpMethod.POST, endpoint + "/register").permitAll()
                                 .requestMatchers(HttpMethod.GET, endpoint + "/login").permitAll()
+                                .requestMatchers(HttpMethod.GET, endpoint + "/videogames").permitAll()
                                 .anyRequest().authenticated())
                         .userDetailsService(jpaUserDetailsService)
                         .httpBasic(basic -> basic.authenticationEntryPoint(myBasicAuthenticationEntryPoint))
