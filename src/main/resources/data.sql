@@ -7,10 +7,10 @@ INSERT INTO genres (id, name) VALUES (default, 'Simulation');
 INSERT INTO genres (id, name) VALUES (default, 'Sport');
 INSERT INTO genres (id, name) VALUES (default, 'Strategy');
 
-INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'The legend of Zelda: Echoes of wisdom','2024-09-26','Nintendo','Nintendo Switch');
-INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'Dragon age: The Veilguard','2024-10-31','Bioware','PC, PS5');
-INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'Dragon ball Sparking Zero','2024-10-11','Bandai Namco Entertainment','PC, PS5');
-INSERT INTO videogames (id, name, release_date, company, platform) VALUES (default, 'New World Aeternum','2024-07-25','Amazon Game Studios','PS5');
+INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'The legend of Zelda: Echoes of wisdom','2024-09-26','Nintendo','Nintendo Switch','https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fzeldaechoes.webp?alt=media');
+INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'Dragon age: The Veilguard','2024-10-31','Bioware','PC, PS5', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fdragonageveilguard.png?alt=media');
+INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'Dragon ball Sparking Zero','2024-10-11','Bandai Namco Entertainment','PC, PS5', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fdragonballsparkingzero.png?alt=media');
+INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'New World Aeternum','2024-07-25','Amazon Game Studios','PS5', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fnewworldaeternum.jpg?alt=media');
 
 INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (1, 5);
 INSERT INTO videogames_genres (videogame_id, genres_id) VALUES (1, 1);

@@ -28,6 +28,7 @@ public class VideogameService {
                 dto.setReleaseDate(v.getReleaseDate());
                 dto.setCompany(v.getCompany());
                 dto.setPlatform(v.getPlatform());
+                dto.setImage(v.getImage());
                 return dto;
             }).toList();
     }

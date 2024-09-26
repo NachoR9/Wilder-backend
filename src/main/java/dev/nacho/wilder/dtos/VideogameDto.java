@@ -13,4 +13,5 @@ public class VideogameDto {
     private LocalDate releaseDate;
     private String company;
     private String platform;
+    private String image;
 }

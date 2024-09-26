@@ -31,4 +31,6 @@ public class Videogame {
     private String company;
     @Column(name = "platform")
     private String platform;
+    @Column(name = "image")
+    private String image;
 }
