@@ -45,6 +45,7 @@ public class SecurityConfig {
                         .formLogin(form -> form.disable())
                         .logout(out -> out
                                 .logoutUrl(endpoint + "/logout")
+                                .logoutSuccessUrl("http://localhost:5173/")
                                 .deleteCookies("JSESSIONID"))
                         .authorizeHttpRequests(auth -> auth
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
