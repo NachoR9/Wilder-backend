@@ -1,16 +1,11 @@
 package dev.nacho.wilder.dtos;
 
+import lombok.Data;
+
+@Data
 public class UserDto { 
 
     private String username;
-    private String password;
+    private String password;       
     
-    public String getUsername() {
-        return username;
-    }
-    
-    public String getPassword() {
-        return password;
-    }
-
 }

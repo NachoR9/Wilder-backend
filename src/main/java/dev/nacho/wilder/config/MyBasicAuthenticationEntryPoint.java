@@ -2,6 +2,8 @@ package dev.nacho.wilder.config;
 
 import org.springframework.stereotype.Component;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +15,11 @@ public class MyBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoi
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
             AuthenticationException authException) throws IOException {
+                        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        // response.setHeader("WWW-Authenticate", "Basic realm=" + getRealmName());
+        PrintWriter writer = response.getWriter();
+        writer.println("HTTP Status 401 - " + authException.getMessage());
+
     }
     
     @Override
