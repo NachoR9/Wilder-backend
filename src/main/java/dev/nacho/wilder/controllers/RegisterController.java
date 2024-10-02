@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import dev.nacho.wilder.dtos.UserDto;
 import dev.nacho.wilder.exceptions.UserAlreadyExistsException;
 import dev.nacho.wilder.services.RegisterService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(path = "/api/v1/register")
@@ -20,7 +21,7 @@ public class RegisterController {
         this.service = service;
     }
     @PostMapping
-    public ResponseEntity<String> register(@RequestBody UserDto newUser) {
+    public ResponseEntity<String> register(@RequestBody @Valid UserDto newUser) {
         try {
             return ResponseEntity.ok(service.save(newUser));
         } catch (UserAlreadyExistsException e) {
