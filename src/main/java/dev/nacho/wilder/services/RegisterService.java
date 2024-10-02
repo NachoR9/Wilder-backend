@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import dev.nacho.wilder.dtos.UserDto;
+import dev.nacho.wilder.exceptions.UserAlreadyExistsException;
 import dev.nacho.wilder.implementations.IEncryptFacade;
 import dev.nacho.wilder.models.Role;
 import dev.nacho.wilder.models.User;
@@ -25,6 +26,10 @@ public class RegisterService {
     }
 
     public String save(UserDto newUserDto) {
+        if (repository.findByUsername(newUserDto.getUsername()).isPresent()){
+            throw new UserAlreadyExistsException();
+        }
+        
         String passwordDecoded = encoderFacade.decode("base64", newUserDto.getPassword());
         String passwordEncoded = encoderFacade.encode("bcrypt", passwordDecoded);
 
