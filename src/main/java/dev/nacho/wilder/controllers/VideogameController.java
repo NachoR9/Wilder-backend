@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import dev.nacho.wilder.dtos.CreateVideogameDto;
-import dev.nacho.wilder.dtos.UserDto;
 import dev.nacho.wilder.dtos.VideogameDto;
 import dev.nacho.wilder.services.VideogameService;
 import jakarta.validation.Valid;
