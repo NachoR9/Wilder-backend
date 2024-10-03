@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import dev.nacho.wilder.dtos.CreateVideogameDto;
 import dev.nacho.wilder.dtos.VideogameDto;
+import dev.nacho.wilder.models.Genre;
 import dev.nacho.wilder.models.Videogame;
 import dev.nacho.wilder.repositories.VideogameRepository;
 
@@ -31,6 +33,20 @@ public class VideogameService {
                 dto.setImage(v.getImage());
                 return dto;
             }).toList();
+    }
+
+    public void create(CreateVideogameDto newVideogame) {
+        Videogame videogame = new Videogame();
+        videogame.setName(newVideogame.getName());
+        videogame.setGenres(newVideogame.getGenres().stream().map(g -> {
+            Genre genre = new Genre();
+            genre.setId(g);
+            return genre;
+        }).toList());
+        videogame.setReleaseDate(newVideogame.getReleaseDate());
+        videogame.setCompany(newVideogame.getCompany());
+        videogame.setPlatform(newVideogame.getPlatform());
+        repository.save(videogame);
     }
     
 }
