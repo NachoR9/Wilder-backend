@@ -1,7 +1,11 @@
 package dev.nacho.wilder.services;
 
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.stereotype.Service;
 
+import dev.nacho.wilder.dtos.VideogameDto;
 import dev.nacho.wilder.exceptions.UserNotFoundException;
 import dev.nacho.wilder.exceptions.VideogameNotFoundException;
 import dev.nacho.wilder.models.User;
@@ -29,6 +33,23 @@ public class UserVideogameService {
             user.getVideogames().add(selectedGame);
             userRepository.save(user);
         }
+    }
+
+    public List<VideogameDto> getAll(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
+        Set<Videogame> videogames = user.getVideogames();
+        return videogames.stream()
+        .map(v -> {
+            VideogameDto dto = new VideogameDto();
+            dto.setId(v.getId());
+            dto.setName(v.getName());
+            dto.setGenres(v.getGenres().stream().map(g -> g.getName()).toList());
+            dto.setReleaseDate(v.getReleaseDate());
+            dto.setCompany(v.getCompany());
+            dto.setPlatform(v.getPlatform());
+            dto.setImage(v.getImage());
+            return dto;
+        }).toList();
     }
 
 }
