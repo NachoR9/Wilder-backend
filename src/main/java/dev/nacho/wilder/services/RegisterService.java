@@ -15,9 +15,9 @@ import dev.nacho.wilder.repositories.UserRepository;
 @Service
 public class RegisterService {
 
-    UserRepository repository;
-    RoleService roleService;
-    IEncryptFacade encoderFacade;
+    private UserRepository repository;
+    private RoleService roleService;
+    private IEncryptFacade encoderFacade;
 
     public RegisterService(UserRepository repository, RoleService roleService, IEncryptFacade encoderFacade) {
         this.repository = repository;
