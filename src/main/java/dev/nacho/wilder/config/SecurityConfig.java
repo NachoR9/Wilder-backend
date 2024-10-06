@@ -50,11 +50,12 @@ public class SecurityConfig {
                                 .logoutSuccessHandler((new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK)))
                                 .deleteCookies("JSESSIONID"))
                         .authorizeHttpRequests(auth -> auth
+                                .requestMatchers(HttpMethod.POST, endpoint + "/videogames").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, endpoint + "/videogames").hasRole("ADMIN")
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                                 .requestMatchers(HttpMethod.POST, endpoint + "/register").permitAll()
                                 .requestMatchers(HttpMethod.GET, endpoint + "/login").permitAll()
                                 .requestMatchers(HttpMethod.GET, endpoint + "/videogames").permitAll()
-                                .requestMatchers(HttpMethod.POST, endpoint + "/videogames").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.GET, endpoint + "/genres").permitAll()
                                 .anyRequest().authenticated())
                         .userDetailsService(jpaUserDetailsService)

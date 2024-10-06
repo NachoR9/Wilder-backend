@@ -55,5 +55,9 @@ public class VideogameService {
         videogame.setPlatform(newVideogame.getPlatform());
         repository.save(videogame);
     }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
     
 }
