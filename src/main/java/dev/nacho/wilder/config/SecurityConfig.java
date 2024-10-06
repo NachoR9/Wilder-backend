@@ -51,7 +51,8 @@ public class SecurityConfig {
                                 .deleteCookies("JSESSIONID"))
                         .authorizeHttpRequests(auth -> auth
                                 .requestMatchers(HttpMethod.POST, endpoint + "/videogames").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.DELETE, endpoint + "/videogames").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, endpoint + "/videogames/{id}").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PUT, endpoint + "/videogames/{id}").hasRole("ADMIN")
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                                 .requestMatchers(HttpMethod.POST, endpoint + "/register").permitAll()
                                 .requestMatchers(HttpMethod.GET, endpoint + "/login").permitAll()

@@ -1,11 +1,14 @@
 package dev.nacho.wilder.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import dev.nacho.wilder.dtos.CreateVideogameDto;
+import dev.nacho.wilder.dtos.UpdateVideogameDto;
 import dev.nacho.wilder.dtos.VideogameDto;
+import dev.nacho.wilder.exceptions.VideogameNotFoundException;
 import dev.nacho.wilder.models.Genre;
 import dev.nacho.wilder.models.Videogame;
 import dev.nacho.wilder.repositories.VideogameRepository;
@@ -58,6 +61,25 @@ public class VideogameService {
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    public void update(Long id, UpdateVideogameDto updateVideogameDto) {
+        Videogame videogame = repository.findById(id).orElseThrow(VideogameNotFoundException::new);
+
+        videogame.setName(updateVideogameDto.getName());
+        videogame.setReleaseDate(updateVideogameDto.getReleaseDate());
+        videogame.setCompany(updateVideogameDto.getCompany());
+        videogame.setPlatform(updateVideogameDto.getPlatform());
+        videogame.setImage(updateVideogameDto.getImage());
+        List<Genre> genres = new ArrayList<>();
+        for (Long genreId : updateVideogameDto.getGenres()) {
+            Genre genre = new Genre();
+            genre.setId(genreId);
+            genres.add(genre);
+        }
+        videogame.setGenres(genres);
+
+        repository.save(videogame);
     }
     
 }
