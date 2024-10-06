@@ -53,6 +53,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, endpoint + "/videogames").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.DELETE, endpoint + "/videogames/{id}").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT, endpoint + "/videogames/{id}").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, endpoint + "/videogames/{id}").permitAll()
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                                 .requestMatchers(HttpMethod.POST, endpoint + "/register").permitAll()
                                 .requestMatchers(HttpMethod.GET, endpoint + "/login").permitAll()

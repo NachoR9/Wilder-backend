@@ -45,6 +45,19 @@ public class VideogameService {
             }).toList();
     }
 
+    public VideogameDto get(Long id) {
+        Videogame videogame = repository.findById(id).orElseThrow(VideogameNotFoundException::new);
+        VideogameDto dto = new VideogameDto();
+        dto.setId(videogame.getId());
+        dto.setName(videogame.getName());
+        dto.setGenres(videogame.getGenres().stream().map(g -> g.getName()).toList());
+        dto.setReleaseDate(videogame.getReleaseDate());
+        dto.setCompany(videogame.getCompany());
+        dto.setPlatform(videogame.getPlatform());
+        dto.setImage(videogame.getImage());
+        return dto;
+    }
+
     public void create(CreateVideogameDto newVideogame) {
         Videogame videogame = new Videogame();
         videogame.setName(newVideogame.getName());

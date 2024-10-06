@@ -37,6 +37,11 @@ public class VideogameController {
         service.create(newVideogameDto);
     }
 
+    @GetMapping("/{id}")
+    public VideogameDto get(@PathVariable(name = "id", required = true) Long id) {
+        return service.get(id);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable(name = "id", required = true) Long id) {
         service.delete(id);
