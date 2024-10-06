@@ -1,5 +1,6 @@
 package dev.nacho.wilder.services;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -50,6 +51,20 @@ public class UserVideogameService {
             dto.setImage(v.getImage());
             return dto;
         }).toList();
+    }
+
+    public void delete(Long videogameId, Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
+
+        Set<Videogame> filteredVideogames = new HashSet<>();
+        for (Videogame game : user.getVideogames()) {
+            if (game.getId() != videogameId) {
+                filteredVideogames.add(game);
+            }
+        }
+
+        user.setVideogames(filteredVideogames);
+        userRepository.save(user);
     }
 
 }

@@ -3,7 +3,9 @@ package dev.nacho.wilder.controllers;
 import java.util.List;
 
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,5 +39,12 @@ public class UserVideogameController {
             SecurityUser user = (SecurityUser) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
             service.addVideogame(addVideogameDto.getId(), user.getId());
+        }
+
+        @DeleteMapping("/{id}")
+        public void delete(@PathVariable(name = "id", required = true) Long id) {
+            SecurityUser user = (SecurityUser) SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+            service.delete(id, user.getId());
         }
 }
