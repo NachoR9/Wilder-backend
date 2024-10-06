@@ -18,4 +18,6 @@ public class Genre {
     private Long id;
     @Column(name = "name")
     private String name;
+    @Column(name = "image")
+    private String image;
 }

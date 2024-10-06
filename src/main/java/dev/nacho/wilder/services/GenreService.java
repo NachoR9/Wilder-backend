@@ -22,6 +22,7 @@ public class GenreService {
             GenreDto dto = new GenreDto();
             dto.setId(v.getId());
             dto.setName(v.getName());
+            dto.setImage(v.getImage());
             return dto;
         }).toList();
     }

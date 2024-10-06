@@ -1,11 +1,11 @@
-INSERT INTO genres (id, name) VALUES (default, 'Action');
-INSERT INTO genres (id, name) VALUES (default, 'Fighting');
-INSERT INTO genres (id, name) VALUES (default, 'Horror');
-INSERT INTO genres (id, name) VALUES (default, 'Platformers');
-INSERT INTO genres (id, name) VALUES (default, 'RPG');
-INSERT INTO genres (id, name) VALUES (default, 'Simulation');
-INSERT INTO genres (id, name) VALUES (default, 'Sport');
-INSERT INTO genres (id, name) VALUES (default, 'Strategy');
+INSERT INTO genres (id, name, image) VALUES (default, 'Action', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fspiderman2.jpeg?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Fighting', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fstreet_fighter_6.png?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Horror', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fthe_medium.png?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Platformers', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2FAstro-Bot.png?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'RPG', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fdragonageveilguard.png?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Simulation', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fwanted_raccoon.png?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Sport', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Ff124.jpeg?alt=media');
+INSERT INTO genres (id, name, image) VALUES (default, 'Strategy', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fyu-gi-oh-master-duel-.jpg?alt=media');
 
 INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'The legend of Zelda: Echoes of wisdom','2024-09-26','Nintendo','Nintendo Switch','https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fzeldaechoes.webp?alt=media');
 INSERT INTO videogames (id, name, release_date, company, platform, image) VALUES (default, 'Dragon age: The Veilguard','2024-10-31','Bioware','PC, PS5', 'https://firebasestorage.googleapis.com/v0/b/wilder-app.appspot.com/o/public%2Fdragonageveilguard.png?alt=media');
