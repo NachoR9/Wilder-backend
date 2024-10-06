@@ -19,8 +19,15 @@ public class VideogameService {
         this.repository = repository;
     }
 
-    public List<VideogameDto> getAll() {
-        List<Videogame> videogames = repository.findAll();
+    public List<VideogameDto> getAll(Long genreId) {
+        List<Videogame> videogames;
+        if (genreId != null) {
+            Genre genre = new Genre();
+            genre.setId(genreId);
+            videogames = repository.findByGenres(genre);
+        }  else {
+            videogames = repository.findAll();
+        }
         return videogames.stream()
             .map(v -> {
                 VideogameDto dto = new VideogameDto();
