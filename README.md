@@ -1,4 +1,4 @@
-# Wilder-Frontend
+# Wilder-Backend
 Wilder is a website that provides the user with the possibility of storing their favorite games by adding them from a list and the capability to also delete them and filter them by genre.
 
 # Installation
